@@ -69,3 +69,8 @@ Valid parameters:
 Notice
 ======
 This source code will be maintained in coffeescript and compiled over to JavaScript (just a personal preference). Patches can be submitted in either and I'll just re-write it.
+
+
+License
+=======
+Boxfit uses the MIT license. More info here: http://www.opensource.org/licenses/mit-license.php
