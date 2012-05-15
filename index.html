@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Boxfit : Fit text into divs" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Boxfit</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/michikono/boxfit">View on GitHub</a>
+
+          <h1 id="project_title">Boxfit</h1>
+          <h2 id="project_tagline">Fit text into divs</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/michikono/boxfit/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/michikono/boxfit/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Boxfit</h1>
+
+<p>Boxfit will scale text to fit inside a fixed width div. As in, if you have a div that is 300x300 pixels, it will scale the text inside it to the maximum possible size before the text overflows. Boxfit respects padding settings for the div.</p>
+
+<h1>Usage</h1>
+
+<div class="highlight">
+<pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
+  This is some text
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+</div>
+
+
+<div class="highlight">
+<pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-big-box'</span><span class="p">).</span><span class="nx">boxfit</span><span class="p">();</span>
+</pre>
+</div>
+
+
+<p>This will make the text appear very large to take up the entire 500x500 area as best it can.</p>
+
+<p>By default, the script will fit text in a single line and vertically and horizontally center it like this:</p>
+
+<pre><code>---------------------------
+|                         |
+|          hello          | &lt;= this text would be very large
+|                         |    and fill up the whole box
+---------------------------
+</code></pre>
+
+<p>Long strings are shrunk down to fit in the box. This may not always be desired. You can pass in arguments to make the text wrap across lines to try to fill out as much of the box as possible:</p>
+
+<div class="highlight">
+<pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-big-box'</span><span class="p">).</span><span class="nx">boxfit</span><span class="p">({</span><span class="nx">multiline</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+</pre>
+</div>
+
+
+<pre><code>---------------------------
+|         hello           |
+|        this is          |
+|         hello           |
+---------------------------
+</code></pre>
+
+<p>What it's actually doing under the hood is converting </p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
+  This is some text
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+</div>
+
+
+<p>Into:</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"font-size: ##"</span><span class="nt">&gt;</span>
+    This is some text
+  <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+</div>
+
+
+<p>Then it applies styles to the span to center and align it. This span is EXTREMELY important as it is used to resize the inner text. The text is resized in a loop by changing the font-size attribute on the span tag. Therefor, for now, content inside the target DIV should be text only. If after 1000 iterations, the script fails to find a suitable font-size, it will give up and spit out whatever the current state is. This can happen if you have wacky CSS or lack text inside the div.</p>
+
+<p>Valid parameters:</p>
+
+<ul>
+<li>
+<em>align_middle</em>: set to false to disable vertical alignment behavior</li>
+<li>
+<em>align_center</em>: set to false to disable centering behavior (horizontal)</li>
+<li>
+<em>multiline</em>: set to true to allow the text to wrap</li>
+</ul><h1>Notice</h1>
+
+<p>This source code will be maintained in coffeescript and compiled over to JavaScript (just a personal preference). Patches can be submitted in either and I'll just re-write it.</p>
+
+<h1>License</h1>
+
+<p>Boxfit uses the MIT license. More info here: <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Boxfit maintained by <a href="https://github.com/michikono">michikono</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
