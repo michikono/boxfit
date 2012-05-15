@@ -64,8 +64,8 @@ Then it applies styles to the span to center and align it. This span is EXTREMEL
 
 Valid parameters:
 
-- *align_middle*: set to false to disable horizontal alignment behavior
-- *align_center*: set to false to disable centering behavior
+- *align_middle*: set to false to disable vertical alignment behavior
+- *align_center*: set to false to disable centering behavior (horizontal)
 - *multiline*: set to true to allow the text to wrap
 
 Notice
