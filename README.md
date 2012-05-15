@@ -25,7 +25,7 @@ By default, the script will fit text in a single line and vertically and horizon
 ---------------------------
 ```
 
-You can pass in arguments to make the text wrap across lines to try to fill out as much of the box as possible:
+Long strings are shrunk down to fit in the box. This may not always be desired. You can pass in arguments to make the text wrap across lines to try to fill out as much of the box as possible:
 
 ```javascript
 $('#my-big-box').boxfit({multiline: true});
