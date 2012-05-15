@@ -1,5 +1,5 @@
 (function($) {
-  return $.fn.boxFit = function(options) {
+  return $.fn.boxfit = function(options) {
     var current_step, goal_achieved, inner_span, original_height, original_text, original_width, settings, x_padding, y_padding;
     settings = {
       step_limit: 1000,
