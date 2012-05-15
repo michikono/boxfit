@@ -48,7 +48,7 @@ What it's actually doing under the hood is converting
 Into:
 
 ```html
-<div id="my-big-box" style="width: 500px; height: 500px"><span>This is some text</span></div>
+<div id="my-big-box" style="width: 500px; height: 500px"><span style="font-size: ##">This is some text</span></div>
 ```
 
 Then it applies styles to the span to center and align it. This span is EXTREMELY important as it is used to resize the inner text. The text is resized in a loop by changing the font-size attribute on the span tag. Therefor, for now, content inside the target DIV should be text only. If after 1000 iterations, the script fails to find a suitable font-size, it will give up and spit out whatever the current state is. This can happen if you have wacky CSS or lack text inside the div.
