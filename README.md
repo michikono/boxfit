@@ -21,8 +21,8 @@ By default, the script will fit text in a single line and vertically and horizon
 ```
 ---------------------------
 |                         |
-|          hello          | <== this text would be very large and fill up the whole box
-|                         |
+|          hello          | <= this text would be very large
+|                         |    and fill up the whole box
 ---------------------------
 ```
 
@@ -43,22 +43,28 @@ $('#my-big-box').boxfit({multiline: true});
 What it's actually doing under the hood is converting 
 
 ```html
-<div id="my-big-box" style="width: 500px; height: 500px">This is some text</div>
+<div id="my-big-box" style="width: 500px; height: 500px">
+  This is some text
+</div>
 ```
 
 Into:
 
 ```html
-<div id="my-big-box" style="width: 500px; height: 500px"><span style="font-size: ##">This is some text</span></div>
+<div id="my-big-box" style="width: 500px; height: 500px">
+  <span style="font-size: ##">
+    This is some text
+  </span>
+</div>
 ```
 
 Then it applies styles to the span to center and align it. This span is EXTREMELY important as it is used to resize the inner text. The text is resized in a loop by changing the font-size attribute on the span tag. Therefor, for now, content inside the target DIV should be text only. If after 1000 iterations, the script fails to find a suitable font-size, it will give up and spit out whatever the current state is. This can happen if you have wacky CSS or lack text inside the div.
 
 Valid parameters:
 
-- align_middle: set to false to disable horizontal alignment behavior
-- align_center: set to false to disable centering behavior
-- multiline: set to true to allow the text to wrap
+- *align_middle*: set to false to disable horizontal alignment behavior
+- *align_center*: set to false to disable centering behavior
+- *multiline*: set to true to allow the text to wrap
 
 Notice
 ======
