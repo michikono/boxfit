@@ -7,7 +7,9 @@ Usage
 =====
 
 ```html
-<div id="my-big-box" style="width: 500px; height: 500px">This is some text</div>
+<div id="my-big-box" style="width: 500px; height: 500px">
+  This is some text
+</div>
 ```
 
 ```javascript
