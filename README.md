@@ -1,9 +1,10 @@
 boxfit
 ======
 
-This source code will be maintained in coffeescript and compiled over to JavaScript (just a personal preference). Patches can be submitted in either and I'll just re-write it.
+Boxfit will scale text to fit inside a fixed width div. As in, if you have a div that is 300x300 pixels, it will scale the text inside it to the maximum possible size before the text overflows.
 
-To use:
+Usage
+=====
 
 ```html
 <div id="my-big-box" style="width: 500px; height: 500px">This is some text</div>
@@ -58,3 +59,7 @@ Valid parameters:
 - align_middle: set to false to disable horizontal alignment behavior
 - align_center: set to false to disable centering behavior
 - multiline: set to true to allow the text to wrap
+
+Notice
+======
+This source code will be maintained in coffeescript and compiled over to JavaScript (just a personal preference). Patches can be submitted in either and I'll just re-write it.
