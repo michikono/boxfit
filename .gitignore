@@ -1,0 +1,37 @@
+## MAC OS
+.DS_Store
+
+## TEXTMATE
+*.tmproj
+tmtags
+
+## EMACS
+*~
+\#*
+.\#*
+
+## VIM
+*.swp
+
+## PROJECT::GENERAL
+coverage
+rdoc
+pkg
+public/assets*
+# uncommmenting this to let heroku pick up these compiled files
+public/javascripts/*
+public/javascript-api/
+
+## PROJECT::SPECIFIC
+# config
+
+## IDEA
+.idea/*
+.idea/.rakeTasks
+
+.bundle
+db/*.sqlite3
+db/backup*
+log/*.log
+log/*.txt
+tmp/*
