@@ -17,13 +17,6 @@ tmtags
 coverage
 rdoc
 pkg
-public/assets*
-# uncommmenting this to let heroku pick up these compiled files
-public/javascripts/*
-public/javascript-api/
-
-## PROJECT::SPECIFIC
-# config
 
 ## IDEA
 .idea/*
