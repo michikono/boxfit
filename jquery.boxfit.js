@@ -1,13 +1,6 @@
-/*
- BoxFit v1.0 - jQuery Plugin
- (c) 2012 Michi Kono (michikono.com)
- License: http://www.opensource.org/licenses/mit-license.php
- to use: $('#target-div').boxfit()
- Will make the *text* content inside the div (or whatever tag) scale to fit that tag
- */
 (function($) {
     return $.fn.boxfit = function(options) {
-        var current_step, inner_span, original_height, original_text, original_width, settings, size, x_padding, y_padding, _results;
+        var current_step, inner_span, original_height, original_text, original_width, settings, size, span, x_padding, y_padding, _results;
         settings = {
             step_limit: 200,
             align_middle: true,
@@ -28,12 +21,13 @@
             }
             return $(this).text(original_text);
         } else {
-            $(this).prepend($('<span></span>').text(original_text));
-            x_padding = parseInt($(this).css('padding-left'), 10) + parseInt($(this).css('padding-right'), 10);
-            y_padding = parseInt($(this).css('padding-top'), 10) + parseInt($(this).css('padding-bottom'), 10);
+            span = $('<span></span>').text(original_text);
+            $(this).prepend(span);
+            x_padding = parseInt($(span).css('padding-left'), 10) + parseInt($(this).css('padding-right'), 10);
+            y_padding = parseInt($(span).css('padding-top'), 10) + parseInt($(this).css('padding-bottom'), 10);
             current_step = 0;
             inner_span = $(this).children().first();
-            while (inner_span.width() < original_width - x_padding && inner_span.height() < original_height - y_padding) {
+            while (inner_span.width() < original_width - x_padding || inner_span.height() < original_height - y_padding) {
                 if (current_step++ > settings.step_limit) {
                     break;
                 }
@@ -49,7 +43,7 @@
             }
             current_step = 0;
             _results = [];
-            while ($(this).height() > original_height || $(this).width() > original_width) {
+            while ($(this).width() > original_width || $(this).height() > original_height) {
                 size = parseInt(inner_span.css("font-size"), 10) - 1;
                 if (size <= 4) {
                     break;

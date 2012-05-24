@@ -1,13 +1,13 @@
 # BoxFit v1.0 - jQuery Plugin
 # (c) 2012 Michi Kono (michikono.com)
 # License: http://www.opensource.org/licenses/mit-license.php
-# to use: $('#target-div').boxfit()
+# to use: $('#target-div').boxFit()
 # Will make the *text* content inside the div (or whatever tag) scale to fit that tag
 (($) ->
   $.fn.boxfit = (options) ->
 
     settings =
-      # the number of font size iterations we should step through until we give up
+    # the number of font size iterations we should step through until we give up
       step_limit: 200
       # set to false to NOT align middle (vertically)
       align_middle: true
@@ -15,7 +15,7 @@
       align_center: true
       # set to false to allow the big text to wrap (useful for when you want text to fill a big vertical area)
       multiline: false
-      
+
     $.extend( settings, options );
 
     unless settings.multiline
@@ -32,15 +32,16 @@
       console.info('Set static height/width on target DIV before using boxfit!') if window.console?
       $(this).text(original_text)
     else
-      $(this).prepend($('<span></span>').text(original_text))
-      x_padding = parseInt($(this).css('padding-left'), 10) + parseInt($(this).css('padding-right'), 10)
-      y_padding = parseInt($(this).css('padding-top'), 10) + parseInt($(this).css('padding-bottom'), 10)
+      span = $('<span></span>').text(original_text)
+      $(this).prepend(span)
+      x_padding = parseInt($(span).css('padding-left'), 10) + parseInt($(this).css('padding-right'), 10)
+      y_padding = parseInt($(span).css('padding-top'), 10) + parseInt($(this).css('padding-bottom'), 10)
       current_step = 0
 
       inner_span = $(this).children().first()
 
-      # first grow things up until it bulges outside of the target
-      while inner_span.width() < original_width - x_padding && inner_span.height() < original_height - y_padding
+      # keep growing the target so long as we haven't exceeded the width or height
+      while inner_span.width() < original_width - x_padding || inner_span.height() < original_height - y_padding
         if current_step++ > settings.step_limit
           break
         inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) + 1)
@@ -55,8 +56,8 @@
 
       # after making our formatting changes, make sure things are still ok
       current_step = 0
-      # just shrink while the box is bigger than it was
-      while $(this).height() > original_height || $(this).width() > original_width
+      # so long as the box is too big in either direction, keep shrinking the text
+      while $(this).width() > original_width || $(this).height() > original_height
         size = parseInt(inner_span.css("font-size"), 10) - 1
         break if size <= 4 # font size 4 is as small as we go
         inner_span.css("font-size", size)
