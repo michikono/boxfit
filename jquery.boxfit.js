@@ -11,7 +11,7 @@
         if (!settings.multiline) {
             $(this).css('white-space', 'nowrap');
         }
-        original_text = $(this).text();
+        original_text = $(this).html();
         $(this).html("");
         original_width = $(this).width();
         original_height = $(this).height();
@@ -19,9 +19,9 @@
             if (window.console != null) {
                 console.info('Set static height/width on target DIV before using boxfit!');
             }
-            return $(this).text(original_text);
+            return $(this).html(original_text);
         } else {
-            span = $('<span></span>').text(original_text);
+            span = $('<span></span>').html(original_text);
             $(this).prepend(span);
             x_padding = parseInt($(span).css('padding-left'), 10) + parseInt($(this).css('padding-right'), 10);
             y_padding = parseInt($(span).css('padding-top'), 10) + parseInt($(this).css('padding-bottom'), 10);
