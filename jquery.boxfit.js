@@ -1,6 +1,14 @@
+// BoxFit v1.0 - jQuery Plugin
+// (c) 2012 Michi Kono (michikono.com)
+// License: http://www.opensource.org/licenses/mit-license.php
+// To use: $('#target-div').boxFit()
+// Will make the *text* content inside the div (or whatever tag) scale to fit that tag
 (function($) {
     return $.fn.boxfit = function(options) {
-        var current_step, inner_span, original_height, original_text, original_width, settings, size, span, x_padding, y_padding, _results;
+        var current_step, inner_span, original_height, original_text, original_width, settings, span, x_padding, y_padding;
+        if (this.length === 0) {
+            return $(this);
+        }
         settings = {
             step_limit: 200,
             align_middle: true,
@@ -27,12 +35,6 @@
             y_padding = parseInt($(span).css('padding-top'), 10) + parseInt($(this).css('padding-bottom'), 10);
             current_step = 0;
             inner_span = $(this).children().first();
-            while (inner_span.width() < original_width - x_padding || inner_span.height() < original_height - y_padding) {
-                if (current_step++ > settings.step_limit) {
-                    break;
-                }
-                inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) + 1);
-            }
             if (settings.align_middle) {
                 $(this).css('display', 'table');
                 inner_span.css('display', 'table-cell');
@@ -41,16 +43,14 @@
             if (settings.align_center) {
                 $(this).css('text-align', 'center');
             }
-            current_step = 0;
-            _results = [];
-            while ($(this).width() > original_width || $(this).height() > original_height) {
-                size = parseInt(inner_span.css("font-size"), 10) - 1;
-                if (size <= 4) {
+            while (inner_span.width() < original_width - x_padding && inner_span.height() < original_height - y_padding) {
+                if (current_step++ > settings.step_limit) {
                     break;
                 }
-                _results.push(inner_span.css("font-size", size));
+                inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) + 1);
             }
-            return _results;
+            inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) - 1);
+            return this;
         }
     };
 })(jQuery);

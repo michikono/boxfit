@@ -1,11 +1,11 @@
 # BoxFit v1.0 - jQuery Plugin
 # (c) 2012 Michi Kono (michikono.com)
 # License: http://www.opensource.org/licenses/mit-license.php
-# to use: $('#target-div').boxFit()
+# To use: $('#target-div').boxFit()
 # Will make the *text* content inside the div (or whatever tag) scale to fit that tag
 (($) ->
   $.fn.boxfit = (options) ->
-
+    return $(this) if this.length == 0 # do nothing if we get passed in a blank object
     settings =
     # the number of font size iterations we should step through until we give up
       step_limit: 200
@@ -40,12 +40,6 @@
 
       inner_span = $(this).children().first()
 
-      # keep growing the target so long as we haven't exceeded the width or height
-      while inner_span.width() < original_width - x_padding || inner_span.height() < original_height - y_padding
-        if current_step++ > settings.step_limit
-          break
-        inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) + 1)
-
       if settings.align_middle
         $(this).css('display', 'table')
         inner_span.css('display', 'table-cell')
@@ -54,12 +48,12 @@
       if settings.align_center
         $(this).css('text-align', 'center')
 
-      # after making our formatting changes, make sure things are still ok
-      current_step = 0
-      # so long as the box is too big in either direction, keep shrinking the text
-      while $(this).width() > original_width || $(this).height() > original_height
-        size = parseInt(inner_span.css("font-size"), 10) - 1
-        break if size <= 4 # font size 4 is as small as we go
-        inner_span.css("font-size", size)
-
+      # keep growing the target so long as we haven't exceeded the width or height
+      while inner_span.width() < original_width - x_padding && inner_span.height() < original_height - y_padding
+        if current_step++ > settings.step_limit
+          break
+        inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) + 1)
+      # go back one step
+      inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) - 1)
+      return this
 )( jQuery )
