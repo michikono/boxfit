@@ -3,9 +3,10 @@
 // License: http://www.opensource.org/licenses/mit-license.php
 // To use: $('#target-div').boxFit()
 // Will make the *text* content inside the div (or whatever tag) scale to fit that tag
+
 (function($) {
     return $.fn.boxfit = function(options) {
-        var current_step, inner_span, original_height, original_text, original_width, settings, span, x_padding, y_padding;
+        var current_step, inner_span, original_height, original_text, original_width, settings, span;
         if (this.length === 0) {
             return $(this);
         }
@@ -29,21 +30,25 @@
             }
             return $(this).html(original_text);
         } else {
-            span = $('<span></span>').html(original_text);
-            $(this).prepend(span);
-            x_padding = parseInt($(span).css('padding-left'), 10) + parseInt($(this).css('padding-right'), 10);
-            y_padding = parseInt($(span).css('padding-top'), 10) + parseInt($(this).css('padding-bottom'), 10);
+            if ($(original_text).find("span.boxfitted").length === 0) {
+                span = $("<span></span>").addClass("boxfitted").html(original_text);
+                $(this).html(span);
+            } else {
+                $(this).html(original_text);
+                span = $(original_text).find('span.boxfitted')[0];
+            }
             current_step = 0;
-            inner_span = $(this).children().first();
+            inner_span = span;
             if (settings.align_middle) {
-                $(this).css('display', 'table');
-                inner_span.css('display', 'table-cell');
-                inner_span.css('vertical-align', 'middle');
+                $(this).css("display", "table");
+                inner_span.css("display", "table-cell");
+                inner_span.css("vertical-align", "middle");
             }
             if (settings.align_center) {
-                $(this).css('text-align', 'center');
+                $(this).css("text-align", "center");
+                inner_span.css("text-align", "center");
             }
-            while (inner_span.width() < original_width - x_padding && inner_span.height() < original_height - y_padding) {
+            while ($(this).width() <= original_width && $(this).height() <= original_height) {
                 if (current_step++ > settings.step_limit) {
                     break;
                 }

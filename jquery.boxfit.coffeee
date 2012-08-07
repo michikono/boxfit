@@ -32,24 +32,26 @@
       console.info('Set static height/width on target DIV before using boxfit!') if window.console?
       $(this).html(original_text)
     else
-      span = $('<span></span>').html(original_text)
-      $(this).prepend(span)
-      x_padding = parseInt($(span).css('padding-left'), 10) + parseInt($(this).css('padding-right'), 10)
-      y_padding = parseInt($(span).css('padding-top'), 10) + parseInt($(this).css('padding-bottom'), 10)
-      current_step = 0
+      if $(original_text).find("span.boxfitted").length is 0
+        span = $("<span></span>").addClass("boxfitted").html(original_text)
+        $(this).html span
+      else
+        $(this).html original_text
+        span = $(original_text).find('span.boxfitted')[0]
 
-      inner_span = $(this).children().first()
+      current_step = 0
+      inner_span = span
 
       if settings.align_middle
-        $(this).css('display', 'table')
-        inner_span.css('display', 'table-cell')
-        inner_span.css('vertical-align', 'middle')
-
+        $(this).css "display", "table"
+        inner_span.css "display", "table-cell"
+        inner_span.css "vertical-align", "middle"
       if settings.align_center
-        $(this).css('text-align', 'center')
+        $(this).css "text-align", "center"
+        inner_span.css "text-align", "center"
 
       # keep growing the target so long as we haven't exceeded the width or height
-      while inner_span.width() < original_width - x_padding && inner_span.height() < original_height - y_padding
+      while $(this).width() <= original_width  && $(this).height() <= original_height
         if current_step++ > settings.step_limit
           break
         inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) + 1)
