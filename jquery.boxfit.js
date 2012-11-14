@@ -20,17 +20,37 @@
         if (!settings.multiline) {
             $(this).css('white-space', 'nowrap');
         }
+
         original_text = $(this).html();
         $(this).html("");
-        original_width = $(this).width();
-        original_height = $(this).height();
+        
+        if(settings.width !== undefined) {
+            original_width = settings.width;
+            $(this).width(original_width + "px");
+        }
+        else {
+            original_width = $(this).width();
+        }
+        
+        if(settings.height !== undefined) {
+            original_height = settings.height;
+            $(this).height(original_height + "px");
+        }
+        else {
+            original_height = $(this).height();
+        }
+
+        if(settings.maxFontSize !== undefined) {
+            settings.maxFont = true;
+        }
+
         if (!original_width || !original_height) {
             if (window.console != null) {
                 console.info('Set static height/width on target DIV before using boxfit!');
             }
             return $(this).html(original_text);
         } else {
-            if ($(original_text).find("span.boxfitted").length === 0) {
+            if ($("<div>" + original_text + "</div>").find("span.boxfitted").length === 0) {
                 span = $("<span></span>").addClass("boxfitted").html(original_text);
                 $(this).html(span);
             } else {
