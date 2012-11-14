@@ -25,14 +25,24 @@
     $(this).html("") # empty out the object
 
     # take measurements
-    original_width = $(this).width()
-    original_height = $(this).height()
+    if settings.width isnt `undefined`
+      original_width = settings.width
+      $(this).width original_width + "px"
+    else
+      original_width = $(this).width()
+    if settings.height isnt `undefined`
+      original_height = settings.height
+      $(this).height original_height + "px"
+    else
+      original_height = $(this).height()
+
+    settings.maxFont = true if settings.maxFontSize isnt `undefined`
 
     if !original_width || !original_height
       console.info('Set static height/width on target DIV before using boxfit!') if window.console?
       $(this).html(original_text)
     else
-      if $(original_text).find("span.boxfitted").length is 0
+      if $("<div>" + original_text + "</div>").find("span.boxfitted").length is 0
         span = $("<span></span>").addClass("boxfitted").html(original_text)
         $(this).html span
       else
