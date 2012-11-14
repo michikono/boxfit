@@ -44,11 +44,11 @@
             return $(this).html(original_text);
         } else {
             if ($("<div>" + original_text + "</div>").find("span.boxfitted").length === 0) {
-                span = $("<span></span>").addClass("boxfitted").html(original_text);
+                span = $($("<span></span>").addClass("boxfitted").html(original_text));
                 $(this).html(span);
             } else {
                 $(this).html(original_text);
-                span = $(original_text).find('span.boxfitted')[0];
+                span = $($(original_text).find('span.boxfitted')[0]);
             }
             current_step = 0;
             inner_span = span;
