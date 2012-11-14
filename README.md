@@ -67,6 +67,9 @@ Valid parameters:
 - *align_middle*: set to false to disable vertical alignment behavior
 - *align_center*: set to false to disable centering behavior (horizontal)
 - *multiline*: set to true to allow the text to wrap
+- *width*: set this to avoid the need to set the width of the element before calling boxfit on it
+- *height*: set this to avoid the need to set the height of the element before calling boxfit on it
+- *maxFontSize*: set to the max font size you want for the element, if none is given there is no maximum
 
 Notice
 ======

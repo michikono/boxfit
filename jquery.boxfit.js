@@ -20,6 +20,7 @@
         if (!settings.multiline) {
             $(this).css('white-space', 'nowrap');
         }
+
         original_text = $(this).html();
         $(this).html("");
         if (settings.width !== undefined) {
