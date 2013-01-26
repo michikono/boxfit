@@ -1,12 +1,17 @@
-# BoxFit v1.0 - jQuery Plugin
-# (c) 2012 Michi Kono (michikono.com)
-# License: http://www.opensource.org/licenses/mit-license.php
-# To use: $('#target-div').boxFit()
-# Will make the *text* content inside the div (or whatever tag) scale to fit that tag
+###
+BoxFit v1.0 - jQuery Plugin
+(c) 2012 Michi Kono (michikono.com)
+License: http://www.opensource.org/licenses/mit-license.php
+To use: $('#target-div').boxFit()
+Will make the *text* content inside the div (or whatever tag) scale to fit that tag
+### 
+
 (($) ->
   $.fn.boxfit = (options) ->
     return $(this) if this.length == 0 # do nothing if we get passed in a blank object
     settings =
+    # the amount to change each time - bigger numbers are faster but fit less perfectly
+      step_size: 1
     # the number of font size iterations we should step through until we give up
       step_limit: 200
       # set to false to NOT align middle (vertically)
@@ -64,8 +69,8 @@
       while $(this).width() <= original_width  && $(this).height() <= original_height
         if current_step++ > settings.step_limit
           break
-        inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) + 1)
+        inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) + settings.step_size)
       # go back one step
-      inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) - 1)
+      inner_span.css("font-size", parseInt(inner_span.css("font-size"), 10) - settings.step_size)
       return this
 )( jQuery )
