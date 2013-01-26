@@ -60,16 +60,18 @@ Into:
 </div>
 ```
 
-Then it applies styles to the span to center and align it. This span is EXTREMELY important as it is used to resize the inner text. The text is resized in a loop by changing the font-size attribute on the span tag. Therefor, for now, content inside the target DIV should be text only. If after 1000 iterations, the script fails to find a suitable font-size, it will give up and spit out whatever the current state is. This can happen if you have wacky CSS or lack text inside the div.
+Then it applies styles to the span to center and align it. This span is EXTREMELY important as it is used to resize the inner text. The text is resized in a loop by changing the font-size attribute on the span tag. Therefor, for now, content inside the target DIV should be text only. If after 200 iterations, the script fails to find a suitable font-size, it will give up and spit out whatever the current state is. This can happen if you have wacky CSS or lack text inside the div.
 
 Valid parameters:
 
-- *align_middle*: set to false to disable vertical alignment behavior
-- *align_center*: set to false to disable centering behavior (horizontal)
-- *multiline*: set to true to allow the text to wrap
+- *align_middle*: (default true) set to false to disable vertical alignment behavior
+- *align_center*: (default true) set to false to disable centering behavior (horizontal)
+- *step_size*: (default 1) the amount to change each time - bigger numbers are faster but fit less perfectly
+- *step_limit*: (default 200) the number of font size iterations we should step through until we give up
+- *multiline*: (default false) set to true to allow the text to wrap
 - *width*: set this to avoid the need to set the width of the element before calling boxfit on it
 - *height*: set this to avoid the need to set the height of the element before calling boxfit on it
-- *maxFontSize*: set to the max font size you want for the element, if none is given there is no maximum
+- *max_font_size*: (default null) set to the max font size you want for the element, if none is given there is no maximum
 
 Notice
 ======
