@@ -1,7 +1,7 @@
-Boxfit v1.01
+jQuery Boxfit v1.01
 ======
 
-Boxfit will scale text to fit inside a fixed width div. As in, if you have a div that is 300x300 pixels, it will scale the text inside it to the maximum possible size before the text overflows. Boxfit respects padding settings for the div. While boxfit will not scale images, it WILL handle text with other visual entities mixed in.
+Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a fixed width div. Boxfit respects padding settings for the div. While boxfit will not scale images, it *will* handle text with other visual entities mixed in.
 
 Usage
 =====
