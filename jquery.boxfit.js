@@ -1,7 +1,7 @@
 // BoxFit v1.0 - jQuery Plugin
 // (c) 2012 Michi Kono (michikono.com)
 // License: http://www.opensource.org/licenses/mit-license.php
-// To use: $('#target-div').boxFit()
+// To use: $('#target-div').boxfit()
 // Will make the *text* content inside the div (or whatever tag) scale to fit that tag
 
 (function($) {
