@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <title>Demo of Boxfit by Michi Kono</title>
+    </head>
+    <meta charset='utf-8'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="jquery.boxfit.js"></script>
+    <style>
+        div { padding: 5px; margin: 5px; border: 2px solid red; }
+    </style>
+    <body>
+    <h1>Standard example</h1>
+    <textarea cols=80 rows=5>
+<div id="box1" style="width: 500px; height: 200px">Word.</div>
+<script>
+    $("#box1").boxfit()
+</script>
+    </textarea>
+    <div id="box1" style="width: 500px; height: 200px">Word.</div>
+    <script>
+        $("#box1").boxfit()
+    </script>
+    <hr/>
+
+    <h1>Standard exmaple with too much text</h1>
+    <textarea cols=80 rows=5>
+<div id="box2" style="width: 250px; height: 100px">No wrapping allowed. This can sometimes makes things awkward/shrink.</div>
+<script>
+    $("#box2").boxfit()
+</script>
+    </textarea>
+    <div id="box2" style="width: 250px; height: 100px">No wrapping allowed. This can sometimes makes things awkward/shrink.</div>
+    <script>
+        $("#box2").boxfit()
+    </script>
+    <hr/>
+
+    <h1>Text wrapping enabled</h1>
+    <textarea cols=80 rows=5>
+<div id="box3" style="width: 200px; height: 300px">this is some cool text I want to fit here</div>
+<script>
+    $("#box3").boxfit({multiline: true})
+</script>
+    </textarea>
+    <div id="box3" style="width: 200px; height: 300px">this is some cool text I want to fit here</div>
+    <script>
+        $("#box3").boxfit({multiline: true})
+    </script>
+    <hr/>
+
+
+    <h1>Max font size</h1>
+    <textarea cols=80 rows=5>
+<div id="box4" style="width: 500px; height: 400px">Max font size 36</div>
+<script>
+    $("#box4").boxfit({maximum_font_size: 34})
+</script>
+    </textarea>
+    <div id="box4" style="width: 500px; height: 400px">Max font size 36</div>
+    <script>
+        $("#box4").boxfit({maximum_font_size: 34})
+    </script>
+
+
+    <h1>Turn off centering and alignment</h1>
+    <textarea cols=80 rows=5>
+        <div id="box5" style="text-align: right; width: 500px; height: 400px">Inherit alignment settings</div>
+        <script>
+$("#box5").boxfit({align_center: false, align_middle: false, max_font_size: 40})
+        </script>
+    </textarea>
+    <div id="box5" style="text-align: right; width: 500px; height: 400px">Inherit alignment settings</div>
+    <script>
+        $("#box5").boxfit({align_center: false, align_middle: false, max_font_size: 40})
+    </script>
+    </body>
+</html>

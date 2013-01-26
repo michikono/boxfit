@@ -69,9 +69,10 @@ Valid parameters:
 - *step_size*: (default 1) the amount to change each time - bigger numbers are faster but fit less perfectly
 - *step_limit*: (default 200) the number of font size iterations we should step through until we give up
 - *multiline*: (default false) set to true to allow the text to wrap
-- *width*: set this to avoid the need to set the width of the element before calling boxfit on it
-- *height*: set this to avoid the need to set the height of the element before calling boxfit on it
-- *max_font_size*: (default null) set to the max font size you want for the element, if none is given there is no maximum
+- *width*: manually set a width if you haven't set one explicitly via CSS
+- *height*: manually set a height if you haven't set one explicitly via CSS
+- *minimum_font_size*: (default 5) minimum font size (changing this may cause some "shrink" scenarios to overflow instead)
+- *maximum_font_size*: (default null) set to the max font size you want for the element, if none is given there is no maximum
 
 Notice
 ======
