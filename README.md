@@ -81,4 +81,4 @@ This source code will be maintained in coffeescript and compiled over to JavaScr
 
 License
 =======
-Boxfit uses the MIT license. More info here: http://www.opensource.org/licenses/mit-license.php
+Copyright Michi Kono. Boxfit uses the MIT license. More info here: http://www.opensource.org/licenses/mit-license.php
