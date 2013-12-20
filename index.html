@@ -17,7 +17,7 @@
     <div class="wrapper">
       <header>
         <h1 class="header">Boxfit</h1>
-        <p class="header">Fit text into divs</p>
+        <p class="header">A jQuery plugin for fitting text into divs</p>
 
         <ul>
           <li class="download"><a class="buttons" href="https://github.com/michikono/boxfit/zipball/master">Download ZIP</a></li>
@@ -30,18 +30,22 @@
 
       </header>
       <section>
-        <h1>jQuery Boxfit v1.01</h1>
+        <h1>
+<a name="jquery-boxfit-v101" class="anchor" href="#jquery-boxfit-v101"><span class="octicon octicon-link"></span></a>jQuery Boxfit v1.01</h1>
+
+<p><a href="http://michikono.github.io/boxfit">http://michikono.github.io/boxfit</a></p>
 
 <p>Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a fixed width div. Boxfit respects padding settings for the div. While boxfit will not scale images, it <em>will</em> handle text with other visual entities mixed in.</p>
 
-<h1>Usage</h1>
+<h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
   This is some text
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-big-box'</span><span class="p">).</span><span class="nx">boxfit</span><span class="p">();</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-big-box'</span><span class="p">).</span><span class="nx">boxfit</span><span class="p">();</span>
 </pre></div>
 
 <p>This will make the text appear very large to take up the entire 500x500 area as best it can.</p>
@@ -57,7 +61,7 @@
 
 <p>Long strings are shrunk down to fit in the box. This may not always be desired. You can pass in arguments to make the text wrap across lines to try to fill out as much of the box as possible:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-big-box'</span><span class="p">).</span><span class="nx">boxfit</span><span class="p">({</span><span class="nx">multiline</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-big-box'</span><span class="p">).</span><span class="nx">boxfit</span><span class="p">({</span><span class="nx">multiline</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
 </pre></div>
 
 <pre><code>---------------------------
@@ -69,14 +73,14 @@
 
 <p>What it's actually doing under the hood is converting </p>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
   This is some text
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
 <p>Into:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"font-size: ##"</span><span class="nt">&gt;</span>
     This is some text
   <span class="nt">&lt;/span&gt;</span>
@@ -106,16 +110,18 @@
 <em>minimum_font_size</em>: (default 5) minimum font size (changing this may cause some "shrink" scenarios to overflow instead)</li>
 <li>
 <em>maximum_font_size</em>: (default null) set to the max font size you want for the element, if none is given there is no maximum</li>
-</ul><h1>Notice</h1>
+</ul><h1>
+<a name="notice" class="anchor" href="#notice"><span class="octicon octicon-link"></span></a>Notice</h1>
 
 <p>This source code will be maintained in coffeescript and compiled over to JavaScript (just a personal preference). Patches can be submitted in either and I'll just re-write it.</p>
 
-<h1>License</h1>
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
 
-<p>Boxfit uses the MIT license. More info here: <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></p>
+<p>Copyright Michi Kono. Boxfit uses the MIT license. More info here: <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></p>
       </section>
       <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
