@@ -1,6 +1,7 @@
 jQuery Boxfit v1.01
-http://michikono.github.io/boxfit
 ======
+
+http://michikono.github.io/boxfit
 
 Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a fixed width div. Boxfit respects padding settings for the div. While boxfit will not scale images, it *will* handle text with other visual entities mixed in.
 
