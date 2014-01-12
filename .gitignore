@@ -30,3 +30,4 @@ log/*.txt
 tmp/*
 
 lib
+node_modules

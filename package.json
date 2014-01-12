@@ -13,9 +13,7 @@
   ],
   "main": "lib/jquery.boxfit.js",
   "scripts": {
-    "build":        "coffee --bare --compile --output lib/ src/*.coffee",
-    "prepublish":   "coffee --bare --compile --output lib/ src/*.coffee",
-    "postpublish":  "rm -rf lib"
+    "test":  "grunt"
   },
   "repository": {
     "type": "git",
@@ -31,7 +29,9 @@
     }
   ],
   "devDependencies": {
-    "coffee-script": ">= 1.6"
+    "coffee-script": ">= 1.6",
+    "grunt-cli": "*",
+    "grunt-contrib-coffee": "*"
   },
   "dependencies": {},
   "keywords": []
