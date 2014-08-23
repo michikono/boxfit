@@ -45,9 +45,7 @@
       } else {
         original_height = $(this).height();
       }
-      if (settings.maxFontSize !== undefined) {
-        settings.maxFont = true;
-      }
+
       if (!original_width || !original_height) {
         if (window.console !== null) {
           return console.info('Set static height/width on target DIV before using boxfit! Detected width: ' + original_width + ' height: ' + original_height);
