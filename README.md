@@ -92,7 +92,7 @@ Valid parameters:
 
 Demo
 ====
-View the file at demo.html for examples in action.
+View the file at http://michikono.github.io/boxfit/demo.html for examples in action.
 
 
 License
