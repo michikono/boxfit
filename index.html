@@ -31,7 +31,7 @@
       </header>
       <section>
         <h1>
-<a name="jquery-boxfit-v101" class="anchor" href="#jquery-boxfit-v101"><span class="octicon octicon-link"></span></a>jQuery Boxfit v1.01</h1>
+<a name="jquery-boxfit-v121" class="anchor" href="#jquery-boxfit-v121"><span class="octicon octicon-link"></span></a>jQuery Boxfit v1.2.1</h1>
 
 <p><a href="http://michikono.github.io/boxfit">http://michikono.github.io/boxfit</a></p>
 
@@ -40,10 +40,24 @@
 <h1>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
 
+<p>(Optional) Install using bower:</p>
+
+<pre><code>$ bower install -S jquery.boxfit
+</code></pre>
+
+<p>Include the library after jQuery (this example is pulling from the bower_components/ folder):</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"bower_components/jquery.boxfit/dist/jquery.boxfit.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>Create a div:</p>
+
 <div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
   This is some text
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
+
+<p>Apply the transformer:</p>
 
 <div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-big-box'</span><span class="p">).</span><span class="nx">boxfit</span><span class="p">();</span>
 </pre></div>
@@ -71,7 +85,7 @@
 ---------------------------
 </code></pre>
 
-<p>What it's actually doing under the hood is converting </p>
+<p>What it's actually doing under the hood is converting</p>
 
 <div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"my-big-box"</span> <span class="na">style=</span><span class="s">"width: 500px; height: 500px"</span><span class="nt">&gt;</span>
   This is some text
@@ -111,14 +125,25 @@
 <li>
 <em>maximum_font_size</em>: (default null) set to the max font size you want for the element, if none is given there is no maximum</li>
 </ul><h1>
-<a name="notice" class="anchor" href="#notice"><span class="octicon octicon-link"></span></a>Notice</h1>
+<a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h1>
 
-<p>This source code will be maintained in coffeescript and compiled over to JavaScript (just a personal preference). Patches can be submitted in either and I'll just re-write it.</p>
+<p>View the file at <a href="http://michikono.github.io/boxfit/demo.html">http://michikono.github.io/boxfit/demo.html</a> for examples in action.</p>
 
 <h1>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
 
 <p>Copyright Michi Kono. Boxfit uses the MIT license. More info here: <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></p>
+
+<h2>
+<a name="releases" class="anchor" href="#releases"><span class="octicon octicon-link"></span></a>Releases</h2>
+
+<ul>
+<li>
+<code>v1.2.1</code> Updated project to use plain JavaScript instead of Coffee (manually converting patches was making maintenance a chore).</li>
+<li>
+<code>v1.2.0</code> Added support for re-running Boxfit, added support for running Boxfit for multiple elements at once.</li>
+<li><code>v1.01</code></li>
+</ul>
       </section>
       <footer>
         <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
