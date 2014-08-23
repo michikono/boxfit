@@ -8,10 +8,14 @@ Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a 
 Usage
 =====
 
-Include the library after jQuery:
+(Optional) Install using bower:
+
+    $ bower install -S jquery.boxfit
+
+Include the library after jQuery (this example is pulling from the bower_components/ folder):
 
 ```html
-<script src="dist/jquery.boxfit.min.js" type="text/javascript"></script>
+<script src="bower_components/jquery.boxfit/dist/jquery.boxfit.min.js" type="text/javascript"></script>
 ```
 
 Create a div:
