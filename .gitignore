@@ -1,7 +1,7 @@
 # Created by http://www.gitignore.io
 
 ### Bower ###
-bower_components
+# bower_components
 
 
 ### Node ###

@@ -1,0 +1,44 @@
+{
+  "name": "jquery.boxfit",
+  "title": "jQuery Boxfit",
+  "description": "Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a fixed width div.",
+  "version": "1.2.2",
+  "homepage": "http://michikono.github.io/boxfit",
+  "author": {
+    "name": "Michi Kono",
+    "url": "http://www.michikono.com/"
+  },
+  "contributors": [
+    "Pawel Niewiadomski <11110000b@gmail.com> (http://twitter.com/devonsteroids)"
+  ],
+  "main": "dist/jquery.boxfit.js",
+  "scripts": {
+    "test":  "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/michikono/boxfit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michikono/boxfit/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "devDependencies": {
+    "grunt-cli": "*",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "jshint-stylish": "~0.1.3",
+    "karma": "~0.12.0",
+    "karma-jasmine": "~0.2.0",
+    "load-grunt-config": "^0.12.0",
+    "load-grunt-tasks": "~0.4.0"
+  },
+  "dependencies": {},
+  "keywords": ["fit", "scale", "resize"]
+}
