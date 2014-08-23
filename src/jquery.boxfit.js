@@ -1,5 +1,5 @@
 /*
- BoxFit v1.2.1 - jQuery Plugin
+ BoxFit v1.2.2 - jQuery Plugin
  (c) 2012 Michi Kono (michikono.com); https://github.com/michikono/boxfit
  License: http://www.opensource.org/licenses/mit-license.php
  To use: $('#target-div').boxFit()
