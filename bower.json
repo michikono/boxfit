@@ -1,0 +1,20 @@
+{
+  "name": "Boxfit Demo",
+  "version": "1.2.1",
+  "homepage": "https://github.com/michikono/boxfit",
+  "authors": [
+    "Michi Kono (michikono@gmail.com)"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery.boxfit": "~1.2.1"
+  },
+  "private": true
+}

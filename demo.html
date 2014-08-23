@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Boxfit by michikono</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="bower_components/jquery.boxfit/dist/jquery.boxfit.min.js"></script>
+    <style>
+        div.example {
+            padding: 5px;
+            margin: 5px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1 class="header">Boxfit</h1>
+
+        <p class="header">A jQuery plugin for fitting text into divs</p>
+
+        <ul>
+            <li class="download"><a class="buttons" href="https://github.com/michikono/boxfit/zipball/master">Download
+                ZIP</a></li>
+            <li class="download"><a class="buttons" href="https://github.com/michikono/boxfit/tarball/master">Download
+                TAR</a></li>
+            <li><a class="buttons github" href="https://github.com/michikono/boxfit">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/michikono">michikono</a>
+        </p>
+
+
+    </header>
+    <section>
+        <h1>
+            <a name="jquery-boxfit-v101" class="anchor" href="#jquery-boxfit-v101"><span
+                    class="octicon octicon-link"></span></a>jQuery Boxfit v1.01</h1>
+
+        <p><a href="http://michikono.github.io/boxfit">http://michikono.github.io/boxfit</a></p>
+
+        <p>Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a fixed width div. Boxfit
+            respects padding settings for the div. While boxfit will not scale images, it <em>will</em> handle text with
+            other visual entities mixed in.</p>
+
+        <h1>
+            <a name="usage" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo
+        </h1>
+
+        <h2>Standard example</h2>
+        <textarea cols="80" rows="5">
+            <div id="box1" style="width: 500px; height: 200px">Word.</div>
+            <script>
+                $("#box1").boxfit();
+            </script>
+        </textarea>
+
+        <div id="box1" class="example" style="width: 500px; height: 200px">Word.</div>
+        <script>
+            $("#box1").boxfit();
+        </script>
+        <hr/>
+
+        <h2>Standard exmaple with too much text</h2>
+        <textarea cols="80" rows="5">
+            <div id="box2" class="example" style="width: 250px; height: 100px">No wrapping allowed. This can sometimes
+                makes things
+                awkward/shrink.
+            </div>
+            <script>
+                $("#box2").boxfit();
+            </script>
+        </textarea>
+
+        <div id="box2" class="example" style="width: 250px; height: 100px">No wrapping allowed. This can sometimes makes
+            things
+            awkward/shrink.
+        </div>
+        <script>
+            $("#box2").boxfit();
+        </script>
+        <hr/>
+
+        <h2>Text wrapping enabled</h2>
+        <textarea cols="80" rows="5">
+            <div id="box3" style="width: 200px; height: 300px">this is some cool text I want to fit here</div>
+            <script>
+                $("#box3").boxfit({multiline: true});
+            </script>
+        </textarea>
+
+        <div id="box3" class="example" style="width: 200px; height: 300px">this is some cool text I want to fit here
+        </div>
+        <script>
+            $("#box3").boxfit({multiline: true});
+        </script>
+        <hr/>
+
+
+        <h2>Max font size</h2>
+        <textarea cols="80" rows="5">
+            <div id="box4" style="width: 500px; height: 400px">Max font size 36</div>
+            <script>
+                $("#box4").boxfit({maximum_font_size: 34});
+            </script>
+        </textarea>
+
+        <div id="box4" class="example" style="width: 500px; height: 400px">Max font size 36</div>
+        <script>
+            $("#box4").boxfit({maximum_font_size: 34});
+        </script>
+
+
+        <h2>Turn off centering and alignment</h2>
+        <textarea cols="80" rows="5">
+            <div id="box5" style="text-align: right; width: 500px; height: 400px">Inherit alignment settings</div>
+            <script>
+                $("#box5").boxfit({align_center: false, align_middle: false, maximum_font_size: 40});
+            </script>
+        </textarea>
+
+        <div id="box5" class="example" style="text-align: right; width: 500px; height: 400px">Inherit alignment
+            settings
+        </div>
+        <script>
+            $("#box5").boxfit({align_center: false, align_middle: false, maximum_font_size: 40});
+        </script>
+
+
+        <h2>Multiple at once :)</h2>
+        <textarea cols="80" rows="13">
+            <table class="boxes">
+                <tr>
+                    <td>
+                        <div style="width: 300px; height: 300px">Example huge cells</div>
+                    </td>
+                    <td>
+                        <div style="width: 300px; height: 300px">Example huge cells</div>
+                    </td>
+                </tr>
+            </table>
+            <script>
+                $(".boxes td div").boxfit({align_center: true, align_middle: true});
+            </script>
+        </textarea>
+
+        <table class="boxes">
+            <tr>
+                <td>
+                    <div class="example" style="width: 300px; height: 300px">Example huge cells</div>
+                </td>
+                <td>
+                    <div class="example" style="width: 300px; height: 300px">Example huge cells</div>
+                </td>
+            </tr>
+        </table>
+        <script>
+            $(".boxes td div").boxfit({align_center: true, align_middle: true});
+        </script>
+
+
+    </section>
+    <footer>
+        <p>
+            <small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small>
+        </p>
+    </footer>
+</div>
+<!--[if !IE]>
+<script>fixScale(document);</script>
+<![endif]-->
+
+</body>
+</html>
