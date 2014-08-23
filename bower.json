@@ -10,7 +10,11 @@
   ],
   "description": "Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a fixed width div.",
   "main": "dist/jquery.boxfit.js",
-  "keywords": ["fit", "scale", "resize"],
+  "keywords": [
+    "fit",
+    "scale",
+    "resize"
+  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -18,5 +22,7 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+  }
 }
