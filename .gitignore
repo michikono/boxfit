@@ -28,3 +28,6 @@ db/backup*
 log/*.log
 log/*.txt
 tmp/*
+
+lib
+node_modules

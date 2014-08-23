@@ -1,0 +1,38 @@
+{
+  "name": "jquery.boxfit",
+  "title": "jQuery Boxfit",
+  "description": "Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a fixed width div.",
+  "version": "1.2.0",
+  "homepage": "http://michikono.github.io/boxfit",
+  "author": {
+    "name": "Michi Kono",
+    "url": "http://www.michikono.com/"
+  },
+  "contributors": [
+    "Pawel Niewiadomski <11110000b@gmail.com> (http://twitter.com/devonsteroids)"
+  ],
+  "main": "lib/jquery.boxfit.js",
+  "scripts": {
+    "test":  "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/michikono/boxfit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michikono/boxfit/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "devDependencies": {
+    "coffee-script": ">= 1.6",
+    "grunt-cli": "*",
+    "grunt-contrib-coffee": "*"
+  },
+  "dependencies": {},
+  "keywords": []
+}

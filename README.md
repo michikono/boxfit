@@ -44,7 +44,7 @@ $('#my-big-box').boxfit({multiline: true});
 ---------------------------
 ```
 
-What it's actually doing under the hood is converting 
+What it's actually doing under the hood is converting
 
 ```html
 <div id="my-big-box" style="width: 500px; height: 500px">
@@ -84,3 +84,8 @@ This source code will be maintained in coffeescript and compiled over to JavaScr
 License
 =======
 Copyright Michi Kono. Boxfit uses the MIT license. More info here: http://www.opensource.org/licenses/mit-license.php
+
+Releases
+----------------------------
+* `v1.2.0` Added support for re-running Boxfit, added support for running Boxfit for multiple elements at once.
+* `v1.01`
