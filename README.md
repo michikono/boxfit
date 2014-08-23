@@ -1,4 +1,4 @@
-jQuery Boxfit v1.01
+jQuery Boxfit v1.2.1
 ======
 
 http://michikono.github.io/boxfit
@@ -76,10 +76,6 @@ Valid parameters:
 - *minimum_font_size*: (default 5) minimum font size (changing this may cause some "shrink" scenarios to overflow instead)
 - *maximum_font_size*: (default null) set to the max font size you want for the element, if none is given there is no maximum
 
-Notice
-======
-This source code will be maintained in coffeescript and compiled over to JavaScript (just a personal preference). Patches can be submitted in either and I'll just re-write it.
-
 
 License
 =======
@@ -87,5 +83,6 @@ Copyright Michi Kono. Boxfit uses the MIT license. More info here: http://www.op
 
 Releases
 ----------------------------
+* `v1.2.1` Updated project to use plain JavaScript instead of Coffee (manually converting patches was making maintenance a chore).
 * `v1.2.0` Added support for re-running Boxfit, added support for running Boxfit for multiple elements at once.
 * `v1.01`
