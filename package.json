@@ -2,7 +2,7 @@
   "name": "jquery.boxfit",
   "title": "jQuery Boxfit",
   "description": "Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a fixed width div.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "http://michikono.github.io/boxfit",
   "author": {
     "name": "Michi Kono",
