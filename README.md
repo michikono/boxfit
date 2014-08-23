@@ -8,11 +8,21 @@ Boxfit is a jQuery plugin for resizing text. It will scale text to fit inside a 
 Usage
 =====
 
+Include the library after jQuery:
+
+```html
+<script src="dist/jquery.boxfit.min.js" type="text/javascript"></script>
+```
+
+Create a div:
+
 ```html
 <div id="my-big-box" style="width: 500px; height: 500px">
   This is some text
 </div>
 ```
+
+Apply the transformer:
 
 ```javascript
 $('#my-big-box').boxfit();
@@ -75,6 +85,10 @@ Valid parameters:
 - *height*: manually set a height if you haven't set one explicitly via CSS
 - *minimum_font_size*: (default 5) minimum font size (changing this may cause some "shrink" scenarios to overflow instead)
 - *maximum_font_size*: (default null) set to the max font size you want for the element, if none is given there is no maximum
+
+Demo
+====
+View the file at demo.html for examples in action.
 
 
 License
