@@ -1,4 +1,4 @@
-jQuery Boxfit v1.01
+jQuery Boxfit v1.2.0
 ======
 
 http://michikono.github.io/boxfit
