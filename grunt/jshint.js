@@ -4,8 +4,9 @@ module.exports = {
   },
   all: [
     'Gruntfile.js',
-    'angular-spinner.js',
-    'tests.js',
+    'grunt/*.js',
+    'src/*.js',
+    'test/*.js',
     'karma.conf.js'
   ]
 };
