@@ -74,6 +74,8 @@
         }
         // fixing issue where custom line-heights would break wrapped text
         inner_span.css('line-height', '100%');
+
+        // keep growing the target so long as we haven't exceeded the width or height
         inner_span.css('font-size', settings.minimum_font_size);
         while ($(this).width() <= original_width && $(this).height() <= original_height) {
           if (current_step++ > settings.step_limit) {
