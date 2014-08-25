@@ -1,4 +1,4 @@
-jQuery Boxfit v1.2.2
+jQuery Boxfit v1.2.3
 ======
 
 http://michikono.github.io/boxfit
@@ -101,6 +101,7 @@ Copyright Michi Kono. Boxfit uses the MIT license. More info here: http://www.op
 
 Releases
 ----------------------------
+* `v1.2.3` Support for AMD/CJS
 * `v1.2.2` Added a functional demo page and fixed an issue where line-heights would break wrapped text
 * `v1.2.1` Updated project to use plain JavaScript instead of Coffee (manually converting patches was making maintenance a chore).
 * `v1.2.0` Added support for re-running Boxfit, added support for running Boxfit for multiple elements at once.
