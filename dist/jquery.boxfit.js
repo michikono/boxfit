@@ -5,11 +5,24 @@
  To use: $('#target-div').boxFit()
  Will make the *text* content inside the div (or whatever tag) scale to fit that tag
  */
-'use strict';
 
-(function ($) {
-  $.fn.boxfit = function (options) {
-    return this.each(function () {
+
+(function (root, factory) {
+  'use strict';
+  if (typeof define === 'function' && define.amd) {
+    // AMD
+    define(['jquery'], function($) { return factory(root, $); });
+  } else if (typeof exports === 'object') {
+    // CommonJS
+    module.exports = factory(root, require('jquery'));
+  } else {
+    // Browser globals
+    factory(root, jQuery);
+  }
+}(this, function (window, $) {
+  'use strict';
+  var boxfit = function ($nodes, options) {
+    return $nodes.each(function () {
       var current_step, inner_span, next_font_size, original_height, original_text, original_width, settings, span;
       settings = {
         // manually set a width/height if you haven't set one explicitly via CSS
@@ -74,6 +87,8 @@
         }
         // fixing issue where custom line-heights would break wrapped text
         inner_span.css('line-height', '100%');
+
+        // keep growing the target so long as we haven't exceeded the width or height
         inner_span.css('font-size', settings.minimum_font_size);
         while ($(this).width() <= original_width && $(this).height() <= original_height) {
           if (current_step++ > settings.step_limit) {
@@ -92,4 +107,6 @@
       }
     });
   };
-})(jQuery);
+  $.fn.boxfit = function(options) { return boxfit(this, options); };
+  return boxfit;
+}));
