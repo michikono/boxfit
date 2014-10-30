@@ -43,7 +43,7 @@
         // set to a number to limit the maximum font size allowed
         maximum_font_size: null,
         // set desired line-height
-        line_height:"100%" 
+        line_height:'100%' 
       };
       $.extend(settings, options);
 
