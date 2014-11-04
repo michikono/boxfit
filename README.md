@@ -1,4 +1,4 @@
-jQuery Boxfit v1.2.3
+jQuery Boxfit v1.2.4
 ======
 
 http://michikono.github.io/boxfit
@@ -89,6 +89,7 @@ Valid parameters:
 - *height*: manually set a height if you haven't set one explicitly via CSS
 - *minimum_font_size*: (default 5) minimum font size (changing this may cause some "shrink" scenarios to overflow instead)
 - *maximum_font_size*: (default null) set to the max font size you want for the element, if none is given there is no maximum
+- *line_height*: (default 100%) line-heights can cause problems when resizing so be careful when changing this
 
 Demo
 ====
@@ -101,6 +102,7 @@ Copyright Michi Kono. Boxfit uses the MIT license. More info here: http://www.op
 
 Releases
 ----------------------------
+* `v1.2.4` Added line-height to available options
 * `v1.2.3` Support for AMD/CJS
 * `v1.2.2` Added a functional demo page and fixed an issue where line-heights would break wrapped text
 * `v1.2.1` Updated project to use plain JavaScript instead of Coffee (manually converting patches was making maintenance a chore).
