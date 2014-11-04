@@ -41,7 +41,9 @@
         // minimum font size (changing this may cause some 'shrink' scenarios to overflow instead)
         minimum_font_size: 5,
         // set to a number to limit the maximum font size allowed
-        maximum_font_size: null
+        maximum_font_size: null,
+        // set desired line-height
+        line_height:'100%' 
       };
       $.extend(settings, options);
 
@@ -86,7 +88,7 @@
           inner_span.css('text-align', 'center');
         }
         // fixing issue where custom line-heights would break wrapped text
-        inner_span.css('line-height', '100%');
+        inner_span.css('line-height', settings.line_height);
 
         // keep growing the target so long as we haven't exceeded the width or height
         inner_span.css('font-size', settings.minimum_font_size);
