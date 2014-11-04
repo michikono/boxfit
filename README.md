@@ -95,6 +95,9 @@ Demo
 ====
 View the file at http://michikono.github.io/boxfit/demo.html for examples in action.
 
+Contribute
+==========
+To contribute, pull the source code and run `npm install`. Then after making any changes, run `grunt`. Now you can submit a proper merge request.
 
 License
 =======
